@@ -1,1 +1,0 @@
-Handles application functionality, complaint submission, category selection, form validation, complaint tracking and dashboard interactions.
