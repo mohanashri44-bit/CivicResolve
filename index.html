@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicResolve</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>CivicResolve</h1>
+    <p>AI-Assisted Civic Grievance Management System</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#report">Report Issue</a>
+    <a href="#track">Track Complaint</a>
+    <a href="#dashboard">Dashboard</a>
+</nav>
+
+<section id="home" class="hero">
+    <h2>Building Better Communities Together</h2>
+    <p>Report civic issues and help improve your city.</p>
+    <a href="#report" class="btn">Report an Issue</a>
+</section>
+
+<section id="report" class="container">
+    <h2>Register a Complaint</h2>
+    <form id="complaintForm">
+        <input id="citizen" type="text" placeholder="Your Name" required>
+        <select id="category" required>
+            <option value="">Select Category</option>
+            <option>Road Damage</option>
+            <option>Water Supply</option>
+            <option>Waste Management</option>
+            <option>Street Light</option>
+            <option>Drainage</option>
+        </select>
+        <input id="location" type="text" placeholder="Location" required>
+        <textarea id="description" placeholder="Describe the issue" required></textarea>
+        <button type="submit">Submit Complaint</button>
+    </form>
+    <p id="message"></p>
+</section>
+
+<section id="track" class="container">
+    <h2>Track Your Complaint</h2>
+    <input id="trackId" type="text" placeholder="Enter Complaint ID">
+    <button onclick="trackComplaint()">Track Status</button>
+    <p id="trackResult"></p>
+</section>
+
+<section id="dashboard" class="container">
+    <h2>Authority Dashboard</h2>
+    <div class="stats">
+        <div class="stat">Total Complaints<h3 id="total">0</h3></div>
+        <div class="stat">Pending<h3 id="pending">0</h3></div>
+        <div class="stat">Resolved<h3 id="resolved">0</h3></div>
+    </div>
+    <div id="complaintList"></div>
+</section>
+
+<footer>
+    <p>© 2026 CivicResolve</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
