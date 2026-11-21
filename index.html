@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CivicResolve</title>
+    <meta name="description" content="CivicResolve helps citizens register and track civic complaints.">
+    <title>CivicResolve | Civic Grievance Management</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,54 +15,90 @@
     <p>AI-Assisted Civic Grievance Management System</p>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#report">Report Issue</a>
     <a href="#track">Track Complaint</a>
     <a href="#dashboard">Dashboard</a>
 </nav>
 
-<section id="home" class="hero">
-    <h2>Building Better Communities Together</h2>
-    <p>Report civic issues and help improve your city.</p>
-    <a href="#report" class="btn">Report an Issue</a>
-</section>
+<main>
+    <section id="home" class="hero">
+        <h2>Building Better Communities Together</h2>
+        <p>Report civic issues and help improve your city.</p>
+        <a href="#report" class="btn">Report an Issue</a>
+    </section>
 
-<section id="report" class="container">
-    <h2>Register a Complaint</h2>
-    <form id="complaintForm">
-        <input id="citizen" type="text" placeholder="Your Name" required>
-        <select id="category" required>
-            <option value="">Select Category</option>
-            <option>Road Damage</option>
-            <option>Water Supply</option>
-            <option>Waste Management</option>
-            <option>Street Light</option>
-            <option>Drainage</option>
-        </select>
-        <input id="location" type="text" placeholder="Location" required>
-        <textarea id="description" placeholder="Describe the issue" required></textarea>
-        <button type="submit">Submit Complaint</button>
-    </form>
-    <p id="message"></p>
-</section>
+    <section id="report" class="container">
+        <h2>Register a Complaint</h2>
 
-<section id="track" class="container">
-    <h2>Track Your Complaint</h2>
-    <input id="trackId" type="text" placeholder="Enter Complaint ID">
-    <button onclick="trackComplaint()">Track Status</button>
-    <p id="trackResult"></p>
-</section>
+        <form id="complaintForm">
 
-<section id="dashboard" class="container">
-    <h2>Authority Dashboard</h2>
-    <div class="stats">
-        <div class="stat">Total Complaints<h3 id="total">0</h3></div>
-        <div class="stat">Pending<h3 id="pending">0</h3></div>
-        <div class="stat">Resolved<h3 id="resolved">0</h3></div>
-    </div>
-    <div id="complaintList"></div>
-</section>
+            <label for="citizen">Citizen Name</label>
+            <input id="citizen" type="text"
+                placeholder="Enter your name" required>
+
+            <label for="category">Issue Category</label>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Road">Road Damage</option>
+                <option value="Water">Water Supply</option>
+                <option value="Waste">Waste Management</option>
+                <option value="Street Light">Street Light</option>
+                <option value="Drainage">Drainage</option>
+            </select>
+
+            <label for="location">Complaint Location</label>
+            <input id="location" type="text"
+                placeholder="Enter location" required>
+
+            <label for="description">Issue Description</label>
+            <textarea id="description"
+                placeholder="Describe the issue" required></textarea>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+
+        <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="track" class="container">
+        <h2>Track Your Complaint</h2>
+
+        <label for="trackId">Complaint ID</label>
+        <input id="trackId" type="text"
+            placeholder="Enter Complaint ID">
+
+        <button type="button" onclick="trackComplaint()">
+            Track Status
+        </button>
+
+        <p id="trackResult" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="dashboard" class="container">
+        <h2>Authority Dashboard</h2>
+
+        <div class="stats">
+            <div class="stat">
+                Total Complaints
+                <h3 id="total">0</h3>
+            </div>
+
+            <div class="stat">
+                Pending
+                <h3 id="pending">0</h3>
+            </div>
+
+            <div class="stat">
+                Resolved
+                <h3 id="resolved">0</h3>
+            </div>
+        </div>
+
+        <div id="complaintList"></div>
+    </section>
+</main>
 
 <footer>
     <p>© 2026 CivicResolve</p>
