@@ -8,144 +8,229 @@
 }
 
 body {
-    background: #f4f7fb;
+    background: #f3f6fa;
     color: #263445;
+    line-height: 1.6;
 }
 
 header {
     background: #12345a;
     color: white;
     text-align: center;
-    padding: 28px 15px;
+    padding: 32px 15px;
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 34px;
     margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    color: #dce8f5;
 }
 
 nav {
-    background: #ffffff;
-    padding: 16px;
+    background: white;
+    padding: 17px;
     text-align: center;
-    box-shadow: 0 2px 8px #00000015;
+    box-shadow: 0 2px 10px #00000012;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav a {
     color: #12345a;
     text-decoration: none;
-    margin: 0 12px;
+    margin: 0 14px;
     font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #159b83;
 }
 
 .hero {
     background: linear-gradient(120deg, #12345a, #247c9e);
     color: white;
     text-align: center;
-    padding: 75px 20px;
+    padding: 85px 20px;
 }
 
 .hero h2 {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 15px;
 }
 
 .hero p {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .btn, button {
+    display: inline-block;
     background: #159b83;
     color: white;
     border: none;
-    padding: 12px 22px;
-    border-radius: 6px;
+    padding: 13px 23px;
+    border-radius: 7px;
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover, button:hover {
+    background: #117c6a;
+    transform: translateY(-2px);
 }
 
 .container {
-    max-width: 850px;
-    margin: 30px auto;
-    padding: 28px;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 30px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px #00000012;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #0000000d;
 }
 
 .container h2 {
     color: #12345a;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #e8eef4;
+    padding-bottom: 10px;
+}
+
+form label,
+.container label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #263445;
 }
 
 input, select, textarea {
+    display: block;
     width: 100%;
     padding: 13px;
-    margin-bottom: 15px;
+    margin-bottom: 17px;
     border: 1px solid #ccd5df;
-    border-radius: 6px;
+    border-radius: 7px;
     font-size: 15px;
+    background: #fff;
+    color: #263445;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #159b83;
+    border-color: #159b83;
 }
 
 textarea {
-    min-height: 100px;
+    min-height: 110px;
     resize: vertical;
 }
 
 .stats {
     display: flex;
-    gap: 15px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
 .stat {
     flex: 1;
-    min-width: 130px;
+    min-width: 140px;
     background: #eaf3f8;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 23px 15px;
+    border-radius: 10px;
     text-align: center;
+    border-bottom: 3px solid #159b83;
 }
 
 .stat h3 {
     color: #159b83;
-    font-size: 28px;
+    font-size: 30px;
     margin-top: 10px;
 }
 
+#message, #trackResult {
+    margin-top: 15px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
 #complaintList {
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .complaint-card {
     background: #f4f7fb;
     border-left: 4px solid #159b83;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 5px;
+    padding: 18px;
+    margin-bottom: 14px;
+    border-radius: 7px;
+    overflow-wrap: anywhere;
+}
+
+.complaint-card p {
+    margin-bottom: 10px;
+}
+
+.complaint-card button {
+    margin-top: 8px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #f0a83b;
+    outline-offset: 3px;
 }
 
 footer {
     background: #12345a;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 35px;
+    padding: 22px;
+    margin-top: 40px;
 }
 
 @media (max-width: 600px) {
     nav a {
         display: inline-block;
         margin: 7px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 18px;
     }
 
     .hero h2 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .container {
-        margin: 18px 12px;
+        margin: 20px 12px;
         padding: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
     }
 }
